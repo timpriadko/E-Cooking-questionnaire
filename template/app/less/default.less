@@ -1,0 +1,186 @@
+@import url(./mixin.less);
+
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('../fonts/Gotham-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('../fonts/Gotham-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ITC-NewBaskervilleStd-BoldIt';
+  src: url('../fonts/ITC-NewBaskervilleStd-BoldIt.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OstrichSans-Bold';
+  src: url('../fonts/OstrichSans-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// fonts
+@base_font: "Gotham-Book";
+@second_font: "Gotham-Medium";
+@third_font: "ITC-NewBaskervilleStd-BoldIt";
+@forth_font: "OstrichSans-Bold";
+
+// colors
+@main_black: #000;
+
+// bg
+.bg-gray {
+  background-color: #F8F9FA;
+}
+
+html {
+  height: 100%;
+}
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+body {
+  font-size: 14px;
+  font-family: @base_font;
+}
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-family: @base_font;
+
+  &::selection {
+    background: #e8334d;
+    color: #fff;
+  }
+}
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+a {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+  .transition;
+
+  &:hover {
+    border-color: transparent;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-weight: normal;
+}
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 25px;
+}
+h5 {
+  font-size: 22px;
+}
+h6 {
+  font-size: 16px;
+}
+p {
+  & + p {
+    margin-top: 20px;
+  }
+  &.big {
+    font-size: 20px;
+  }
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  appearance: none;
+}
+input {
+  appearance: none;
+}
+input:not([type='submit']) {
+  width: 100%;
+  height: 43px;
+  padding: 0 15px;
+  font-size: 16px;
+  font-family: @base_font;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #8d8d8d;
+  max-width: 633px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 0;
+
+  & + label {
+    font-family: @base_font;
+  }
+  &.email-input {
+    margin-top: 40px;
+  }
+}
+label {
+  text-align: center;
+  display: block;
+  font-size: 19px;
+  letter-spacing: 0.32px;
+  line-height: 70px;
+
+  input {
+    display: none !important;
+  }
+}
+textarea {
+  max-width: 100%;
+  outline: none;
+  display: block;
+  padding: 15px 0;
+  min-height: 178px;
+  font-size: 16px;
+  width: 100%;
+  resize: none;
+}
+strong {
+  font-weight: 700;
+}
+::-webkit-input-placeholder {
+  color: #fff;
+}
+::-moz-placeholder {
+  color: #fff;
+}
+:-moz-placeholder {
+  color: #fff;
+}
+:-ms-input-placeholder {
+  color: #fff;
+}

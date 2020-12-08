@@ -1,0 +1,49 @@
+.ui-keyboard {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* .ui-keyboard::before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: #d6caccc0;
+  filter: blur(15px);
+  height: 100%;
+  width: 100%;
+} */
+
+.ui-keyboard-keyset {
+  text-align: end;
+  position: relative;
+}
+
+.ui-keyboard-button {  
+  height: 4em;
+  min-width: 4em;
+}
+
+.ui-keyboard-button, .ui-keyboard-button > span {
+  text-transform: uppercase;
+  font-family: 'Cochin', serif;
+  font-weight: 400;
+  background-color: #fff;
+}
+
+.ui-keyboard-button.ui-keyboard-- {
+  margin-right: 30px;
+}
+
+.ui-keyboard-button.ui-keyboard-p {
+  margin-right: 60px;
+}
+
+.ui-keyboard-button.ui-keyboard-accept {
+  padding: 0 25px;
+}
+
+.ui-keyboard-button.ui-keyboard-bksp {
+  padding: 0 53px;
+}

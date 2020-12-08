@@ -1,0 +1,70 @@
+// form-input
+.form-group {
+    position:relative;
+    max-width: 270px;
+    width: 45%;
+
+    .input-label {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+
+        svg {
+            margin-right: 10px;
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: #ff5e00;
+                    transition: .2s;
+                }
+            }
+            
+            span {
+                color: #ff5e00;
+                transition: .2s;
+            }
+        }
+    }
+
+    &.required {
+        .form-input {
+            border-bottom: 1px solid #fa5916;
+        }
+    }
+}
+.form-label {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 10px;
+    background-color: transparent;
+    transition: transform 150ms ease-out, font-size 150ms ease-out;
+    color: #CCCCCC;
+    cursor: inherit;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    color: #777777;
+}
+.focused .form-label {
+    transform: translateY(-125%);
+    font-size: 7px;
+}
+.form-input {
+    position: relative;
+    z-index: 2;
+    padding: 12px 0px 5px 0;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    box-shadow: 0 1px 0 0 #e5e5e5;
+    transition: box-shadow 150ms ease-out;
+    background-color: transparent;
+    border-radius: 0;
+}
+.form-input:focus {
+    box-shadow: 0 2px 0 0 #CCCCCC;
+}
