@@ -1,8 +1,6 @@
 // form-input
 .form-group {
     position:relative;
-    max-width: 270px;
-    width: 45%;
 
     .input-label {
         background: transparent;
@@ -34,6 +32,10 @@
             border-bottom: 1px solid #fa5916;
         }
     }
+
+    & + .form-group {
+        margin-top: 20px;
+    }
 }
 .form-label {
     position: absolute;
@@ -62,6 +64,8 @@
     border: 0;
     box-shadow: 0 1px 0 0 #e5e5e5;
     transition: box-shadow 150ms ease-out;
+    // border-right: none;
+    // border-left: none;
     background-color: transparent;
     border-radius: 0;
 }

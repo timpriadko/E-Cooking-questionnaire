@@ -11,40 +11,69 @@
 </head>
 
 <body>
-  <main class="main-contact step-2 container">
-    <div class="top-block">
-      <div class="logo">
-        <img src="img/logo.png" alt="" />
-      </div>
-      <div class="header-text-block-img">
-        Please enter your details to get the sample set sent to you
-      </div>
-      <form action="" class="details-form">
-        <div class="names-block">
-          <input type="text" placeholder="First name">
-          <input type="text" placeholder="Last name">
-        </div>
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Address" name="address">
-        <input type="text" name="address">
-        <div class="names-block">
-          <input type="text" placeholder="City">
-          <input type="text" placeholder="Postcode">
-        </div>
-        <div class="checkbox-block">
-          <input type="checkbox" name="" id="">
-          <div class="checkbox-text">Please confirm that you agree to our
-            Terms of Use and Privacy Policy by ticking here</div>
-        </div>
-        <div class="checkbox-block">
-          <input type="checkbox" name="" id="">
-          <div class="checkbox-text">Please confirm that you agree to receive marketing communications about Rimmel offers, news and events by emails </div>
-        </div>
-        <div class="link-block">
-          <a href="step_6.html" class="next-link">Send My sample</a>
-        </div>
-      </form>
+  <main class="main-contact">
+    <div class="logo bg-white">
+      <img src="img/Ecooking_logo_black.png" alt="logo" />
     </div>
+
+    <div class="header-block bg-gray">
+      <h5>Thank you</h5>
+
+      <h2>
+        Please enter your details to receive your sample:
+      </h2>
+    </div>
+
+    <form action="" class="details-form">
+      <fieldset>
+        <div class="form-group">
+          <input class="form-input" name="first_name" type="text">
+          <label class="form-label" for="subscribe">First name</label>
+        </div>
+        <div class="form-group">
+          <input class="form-input" name="last_name" type="text">
+          <label class="form-label" for="last_name">Last name</label>
+        </div>
+        <div class="form-group">
+          <input class="form-input" name="email" type="email" id="email">
+          <label class="form-label" for="email">Email address</label>
+        </div>
+        <div class="form-group">
+          <input id="birth_date" class="date" name="birth_date" type="date" placeholder="Date of birth"
+            data-date="Date of birth" data-date-format="DD MMM YYYY" max="2020-12-09">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="form-group">
+          <input class="form-input" name="address" type="text">
+          <label class="form-label" for="address">Address</label>
+        </div>
+        <div class="form-row two-column">
+          <div class="form-group">
+            <input class="form-input" name="city" type="text">
+            <label class="form-label" for="city">City</label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" name="zip" type="text">
+            <label class="form-label" for="zip">Post code</label>
+          </div>
+        </div>
+        <div class="form-group focused">
+          <input class="form-input filled" name="country" type="text" value="United kingdom" readonly="">
+          <label class="form-label" for="country">Country</label>
+        </div>
+      </fieldset>
+
+      <label class="btn disabled" id="customer_form_label">
+        <input type="submit" id="customer_form_submit" disabled="disabled">
+        Next
+      </label>
+    </form>
   </main>
+
+  <script src="js/libs.min.js"></script>
+  <script src="js/scripts.min.js"></script>
 </body>
+
 </html>

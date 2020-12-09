@@ -11,65 +11,107 @@
 </head>
 
 <body>
-  <main class="main-contact step-2 container">
-    <div class="top-block">
-      <div class="logo">
-        <img src="img/logo.png" alt="" />
-      </div>
-      <div class="header-text-block-img">
-        Please enter your details to get the sample set sent to you
-      </div>
+  <main class="main-contact">
+    <div class="grid-position">
+      <div class="grid-position--top">
+        <div class="logo bg-white">
+          <img src="img/Ecooking_logo_black.png" alt="logo" />
+        </div>
 
-      <form action="step_5.html" class="details-form">
-        <div class="names-block form-row two-column">
-            <div class="input-wrap">
-              <input type="text" placeholder="First name" name="first_name">
+        <div class="header-block bg-gray">
+          <h5>QUESTION 2</h5>
+
+          <h2>Please select one product you would like to receive</h2>
+        </div>
+
+        <form action="step_4.html" method="get" class="container">
+          <input type="hidden" name="question" value="Please select one product you would like to receive" />
+
+          <div class="cards-wrap">
+            <div class="card">
+              <h3>
+                Anti redness cream
+              </h3>
+
+              <img src="img/img3.png" alt="Anti redness cream">
+
+              <a href="#" class="popup-open">READ MORE</a>
+
+              <label class="btn">
+                <input type="submit" name="answer" value="ANTI REDNESS CREAM" hidden />
+                Select
+              </label>
+
+              <div class="popup-wrapper">
+                <div class="popup">
+                  <div class="popup__close">
+                    <button></button>
+                  </div>
+                  <div class="popup__content">
+                    <img src="img/img3.png" alt="Anti redness cream">
+                    <div class="popup__text">
+                      <h4>
+                        Anti redness cream
+                      </h4>
+                      <p>
+                        This soothing cream efficiently reduces irritation, whilst neutralising redness. This cream has
+                        a calming and moisturising effect on the skin and leaves if soft and at ease. It’s a lasting
+                        solution to sensitive skin that suffers from redness. Ideal for sensitive skin or if prone to
+                        acne.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="input-wrap">
-              <input type="text" placeholder="Last name" name="last_name">
+
+            <div class="card">
+              <h3>
+                Night cream
+              </h3>
+
+              <img src="img/img4.png" alt="Night cream">
+
+              <a href="#" class="popup-open">READ MORE</a>
+
+              <label class="btn">
+                <input type="submit" name="answer" value="Night cream" hidden />
+                Select
+              </label>
+
+              <div class="popup-wrapper">
+                <div class="popup">
+                  <div class="popup__close">
+                    <button></button>
+                  </div>
+                  <div class="popup__content">
+                    <img src="img/img4.png" alt="Night cream">
+                    <div class="popup__text">
+                      <h4>
+                        Night cream
+                      </h4>
+                      <p>
+                        This soothing cream efficiently reduces irritation, whilst neutralising redness. This cream has
+                        a calming and moisturising effect on the skin and leaves if soft and at ease. It’s a lasting
+                        solution to sensitive skin that suffers from redness. Ideal for sensitive skin or if prone to
+                        acne.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-
-        <div class="input-wrap">
-          <input placeholder="Email" type="email" id="email">
-        </div>
-
-        <div class="input-wrap">
-          <input type="text" placeholder="Address" name="address">
-        </div>
-
-        <input type="text" name="address2">
-
-        <div class="names-block form-row two-column">
-          <div class="input-wrap">
-            <input type="text" placeholder="City" name="city">
           </div>
-          <div class="input-wrap">
-            <input type="text" placeholder="Postcode" name="zip">
-          </div>
-        </div>
+        </form>
+      </div>
 
-        <div class="checkbox-block">
-            <input type="checkbox" name="terms" id="terms">
-          <div class="checkbox-text">Please confirm that you agree to our
-            Terms of Use and Privacy Policy by ticking here</div>
-        </div>
-        <div class="checkbox-block">
-          <input type="checkbox" name="" id="">
-          <div class="checkbox-text">Please confirm that you agree to receive marketing communications about Rimmel offers, news and events by emails </div>
-        </div>
-
-        <div class="btns full">
-          <label class="btn middle disabled" id="customer_form_label">
-              <input type="submit" id="customer_form_submit" disabled />
-              Enter payment details
-          </label>
-        </div>
-      </form>
+      <div class="grid-position--bottom">
+      </div>
     </div>
   </main>
-  
+
   <script src="js/libs.min.js"></script>
   <script src="js/scripts.min.js"></script>
 </body>
+
 </html>
