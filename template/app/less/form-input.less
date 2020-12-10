@@ -36,10 +36,19 @@
     & + .form-group {
         margin-top: 20px;
     }
+
+    input {
+        &::placeholder {
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: .01em;
+            color: #777;
+        }
+    }
 }
 .form-label {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     left: 0;
     top: 10px;
     background-color: transparent;

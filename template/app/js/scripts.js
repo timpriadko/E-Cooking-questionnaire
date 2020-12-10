@@ -66,13 +66,20 @@ $(document).ready(function () {
       email.closest('div').removeClass('invalid-email');
     }
 
+    // birth_date validation
+    if (birth_date.val() === '') {
+      birth_date.closest('div').addClass('required');
+    } else {
+      birth_date.closest('div').removeClass('required');
+    }
+
     // form validation
     if (isEmail(email.val()) &&
       ifNotSpace(email.val()) &&
       text_inputs_filled === true &&
-      country_select.val() !== ""
-      // &&
-      // $(terms).is(':checked')
+      birth_date.val() !== '' &&
+      country_select.val() !== "" &&
+      $(terms).is(':checked')
     ) {
       customerSubmit.removeAttr('disabled');
       customerSubmitLabel.removeClass('disabled');
@@ -82,19 +89,23 @@ $(document).ready(function () {
     }
   };
 
-  email.change(function () {
+  email.on('change', function () {
     form_validation()
   });
 
-  email.keyup(function () {
+  email.on('keyup', function () {
     form_validation()
   });
 
-  text_inputs.keyup(function () {
+  text_inputs.on('keyup', function () {
     form_validation()
   });
 
-  terms.click(form_validation);
+  terms.on('click', form_validation);
+
+  birth_date.on('change', function () {
+    form_validation()
+  });
 
   /* setup modal */
   var termsBtn = $('.terms-btn');
@@ -225,7 +236,7 @@ $(document).ready(function () {
   };
 
   const currentTimeZoneOffsetInHours = currentTimeZoneOffsetInHours_func();
-  console.log(currentTimeZoneOffsetInHours)
+  // console.log(currentTimeZoneOffsetInHours)
 
   // send timezone offset to server
   var setTimezoneReques_sent = sessionStorage.getItem('setTimezoneReques_sent');
@@ -236,7 +247,7 @@ $(document).ready(function () {
       url: setTimezoneRequest_Url,
       type: "GET",
       success: function (data) {
-        console.log(data);
+        // console.log(data);
         // set setTimezoneReques_sent to true
         sessionStorage.setItem('setTimezoneReques_sent', 'true');
       },
@@ -249,8 +260,6 @@ $(document).ready(function () {
   // popup open
   $('.popup-open').click(function (e) {
     e.preventDefault();
-
-    // console.log();
 
     $(this).closest('div').find('.popup-wrapper').addClass('opened');
     $('.main-contact').addClass('fixed');
@@ -268,5 +277,16 @@ $(document).ready(function () {
 
     $('.popup-wrapper').removeClass('opened');
   })
+
+  // datepicker
+  if ($('#birth_date').length > 0) {
+    $('#birth_date').datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'yy-mm-dd',
+      yearRange: "-100:+0",
+      maxDate: "+0m +0d"
+    });
+  }
 
 });

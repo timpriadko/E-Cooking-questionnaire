@@ -1322,13 +1322,6 @@ input:-moz-placeholder {
   input:not([type='submit']).email-input {
     margin-top: 1vh;
   }
-  .age-select .list .option {
-    font-size: 13px;
-  }
-  .age-select .nice-select {
-    border-width: 1px;
-    font-size: 13px;
-  }
   .nice-select {
     height: 32px;
     line-height: 32px;
@@ -1355,9 +1348,6 @@ input:-moz-placeholder {
   }
   .inputs-mobile input:not([type='submit']).email-input {
     margin-top: 0;
-  }
-  .margin-top-40 {
-    margin-top: 2vh;
   }
   .form-col-75,
   .form-col-25 {
