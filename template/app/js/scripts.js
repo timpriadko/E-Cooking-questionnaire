@@ -47,11 +47,11 @@ $(document).ready(function () {
 
     // text inputs require validation
     text_inputs.each(function () {
-      if ($(this).val() === '') {
-        text_inputs_filled_arr.push(false)
+      if ($(this).val() === '' || !ifNotSpace($(this).val())) {
+        text_inputs_filled_arr.push(false);
         $(this).closest('div').addClass('required');
       } else {
-        text_inputs_filled_arr.push(true)
+        text_inputs_filled_arr.push(true);
         $(this).closest('div').removeClass('required');
       }
     })
@@ -285,8 +285,13 @@ $(document).ready(function () {
       changeYear: true,
       dateFormat: 'yy-mm-dd',
       yearRange: "-100:+0",
-      maxDate: "+0m +0d"
+      maxDate: "+0m +0d",
+      // beforeShow: function () { $('input').blur(); }
     });
+
+    $('#birth_date').on('focus', function () {
+      $(this).trigger('blur')
+    })
   }
 
 });

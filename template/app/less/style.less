@@ -98,7 +98,7 @@ h5 {
   display: none;
 }
 .main-contact {
-  max-width: 560px;
+  max-width: 800px;
   margin: 0 auto;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -107,6 +107,10 @@ h5 {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
+
+  &.bg-gray {
+    padding-bottom: 30px;
+  }
 }
 
 .container {
@@ -370,9 +374,6 @@ p.big {
         background: #2A2A2A;
       }
     }
-    label {
-      margin-left: 20px;
-    }
   }
 }
 .wrap-checkbox {
@@ -429,10 +430,8 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 738px;
   width: 100%;
   margin: 10px auto;
-  padding: 0 1.2vh;
     
   &.two-column {
     & > * {
@@ -647,7 +646,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  // height: 100vh;
 }
 
 .text-center {
@@ -737,7 +736,7 @@ fieldset {
     height: 100%;
     position: fixed;
     overflow: scroll;
-    padding-bottom: 120px;
+    padding-bottom: 35px;
 
     .interest,
     .text,
@@ -796,7 +795,7 @@ fieldset {
   }
   .modal {
     max-width: 93vw;
-    max-height: 81vh;
+    max-height: 76vh;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -959,31 +958,34 @@ fieldset {
     max-width: 90%;
     padding: 0;
   }
-  
-  .popup-wrapper {
-    .popup {
-      width: 90vw;
-
-      img {
-        height: 42vh !important;
-      }
-
-      &__text {
-        max-height: 35vh;
-
-        p {
-          overflow-y: scroll;
-          overflow-x: hidden;
-          height: auto;
-          max-height: 23vh;
-          padding: 0 7px;
-        }
-      }
-    }
-  }
 
   .details-form {
     padding-bottom: 0;
+  }
+}
+
+// iphone 7,8
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-height : 700px) {
+  .logo {
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    img {
+      max-width: 200px;
+    }
+  }
+
+  .header-block {
+    padding: 15px 50px;
+
+    h5 {
+      font-size: 21px;
+      & + h2 {
+        margin-top: 12px;
+      }
+    }
   }
 }
 
