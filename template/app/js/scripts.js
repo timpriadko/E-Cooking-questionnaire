@@ -32,6 +32,32 @@ $(document).ready(function () {
     return regex.test(field);
   }
 
+  if (!Array.prototype.includes) {
+    //or use Object.defineProperty
+    Array.prototype.includes = function (search) {
+      return !!~this.indexOf(search);
+    }
+  }
+  if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = (function (Object, max, min) {
+      "use strict";
+      return function indexOf(member, fromIndex) {
+        if (this === null || this === undefined) throw TypeError("Array.prototype.indexOf called on null or undefined");
+
+        var that = Object(this), Len = that.length >>> 0, i = min(fromIndex | 0, Len);
+        if (i < 0) i = max(0, Len + i); else if (i >= Len) return -1;
+
+        if (member === void 0) {
+          for (; i !== Len; ++i) if (that[i] === void 0 && i in that) return i; // undefined
+        } else if (member !== member) {
+          for (; i !== Len; ++i) if (that[i] !== that[i]) return i; // NaN
+        } else for (; i !== Len; ++i) if (that[i] === member) return i; // all else
+
+        return -1; // if the value was not found, then return -1
+      };
+    })(Object, Math.max, Math.min);
+  }
+
   // validate form
   var email = $('#email');
   var customerSubmitLabel = $('#customer_form_label');
@@ -222,6 +248,26 @@ $(document).ready(function () {
 
   // get timezone offset
   var date = new Date();
+
+  if (!Math.sign) {
+    Math.sign = function (x) {
+      // If x is NaN, the result is NaN.
+      // If x is -0, the result is -0.
+      // If x is +0, the result is +0.
+      // If x is negative and not -0, the result is -1.
+      // If x is positive and not +0, the result is +1.
+      return ((x > 0) - (x < 0)) || +x;
+      // A more aesthetic pseudo-representation:
+      //
+      // ( (x > 0) ? 1 : 0 )  // if x is positive, then positive one
+      //          +           // else (because you can't be both - and +)
+      // ( (x < 0) ? -1 : 0 ) // if x is negative, then negative one
+      //         ||           // if x is 0, -0, or NaN, or not a number,
+      //         +x           // then the result will be x, (or) if x is
+      //                      // not a number, then x converts to number
+    };
+  }
+
   const currentTimeZoneOffsetInHours_func = () => {
     let offset = date.getTimezoneOffset() / 60;
     if (Math.sign(offset) === -1) {

@@ -29,5 +29,10 @@
   "dependencies": {
     "gulp-sourcemaps": "^2.6.5",
     "pngquant-bin": "^3.1.1"
-  }
+  },
+  "browserslist": [
+    "last 10 version",
+    "> 0.1%",
+    "IE 10"
+  ]
 }

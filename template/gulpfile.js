@@ -17,7 +17,7 @@ gulp.task('less', function () {
 	return gulp.src('app/less/*.less')
 		.pipe(sourcemaps.init())
 		.pipe(less())
-		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+		.pipe(autoprefixer(['last 15 versions', '> 0.1%', 'ie 8', 'ie 7'], { cascade: true }))
 		.pipe(cssnano())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(sourcemaps.write())
